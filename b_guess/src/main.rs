@@ -18,14 +18,18 @@ fn main() {
         io::stdin().read_line(&mut guess)//passing what is read to a mutable reference
             .expect("Failed to read line");//handling error by taking the result
 
-        let guess: u32 = guess.trim().parse() //SHADOWING the previous value of 'guess' ==> converts from one to another type.
+        let guess: u32 = match guess.trim().parse(){//returns an enum with Ok or Err
+            //ARMS PATTERNS ==> according to a case do something
+            Ok(num) => num,
+            Err(_) => continue, //if error only pass to the next in the loop; '_' means to match all error values.
+        }; //SHADOWING the previous value of 'guess' ==> converts from one to another type.
         //trim method ==> eliminates spaces at the beginning and at the end of guess. eg. 5\n ==> \n because of pressing enter.
         //parse method ==> converts string to the specified number type (in this case to u32)
-        .expect("Please enter a number");
 
         println!("You guessed: {}", guess);//{} is a placeholder
 
         match guess.cmp(&secret_number){
+            //ARMS PATTERNS ==> according to a case do something
             Ordering::Less => println!("Too small!"),
             Ordering::Greater => println!("Too big!"),
             Ordering::Equal => {
