@@ -10,8 +10,11 @@ PD. Rust can also perform unsafe-code.
 
 ## Rust commands
 * cargo --version ; cargo is the rust compilation manager
-* cargo new --bin project_name ;  creates a new project
-* cargo run ; runs the program from anywhere into the package. Invokes the rustc and the executes the producer binary.
+* cargo new --bin project_name ;  creates a new project. Eg. cargo new --bin hello_world
+* cargo run ; runs the program from anywhere into the package. Invokes the rustc and the executes the producer binary. runs "target/debug/hello" where hello can vary according to the project name. If already compiled then only runs the binary.
+* cargo build --release ; builds optimized for release. Creates a target/release folder instead of target/debug folder.
+* cargo check; compiles but does not create the excutable file.
+* cargo build ; creates a lock file to track all dependencies.
 * cargo clean ; clears generated files from "cargo run" that goes into the "target" folder.
 
 * rustdoc --version ; rustdoc is the rust documentation
