@@ -2,6 +2,8 @@
 fn main() {
     constants_variables();
     shadowing();
+    data_types();
+    data_types_scalars_integers()
 }
 
 fn constants_variables(){
@@ -29,4 +31,38 @@ fn shadowing()  {
     shadowing: 'let m='Some string' ==> m is ==> {}",m);
     println!("Another important thing to know is that if we declare 'let mut x = 5' and then we try
     to MUTATE THE TYPE like let x = 'hello' then it will throw an error.");
+}
+
+fn data_types(){
+    let some: u32 = "43".parse().expect("The value to parse is not of type u32");
+    println!("Even when rust can infer what type of values can be passed, sometimes it is needed to
+    explicitly pass the type of value. for example we pass '43' and the we parse it as u32 the the value
+    is and u32 ==> {}",some);
+
+    println!("There are two types of data in rust: 
+    * Scalar types
+    * Compound types")
+
+}
+
+fn data_types_scalars_integers () {
+    println!("A single value
+    * Integers have defined sizes
+    * Integers are signed or unsigned:
+        * Signed Integers:
+            int32 -2^16->2^16-1
+        * Unsigned integers:
+            uint32 0->2^32-1
+    
+    ** Integer literals:
+        * 67_225_567
+        * 0xaf
+        * 0b10101_1111
+        * b'A'
+
+    **Overflow: Lets say you declare u8 but 
+    at runtime the variable gets 257 ==> the program exits panicking.
+    In --release the Two's complement wrapping occurs. so 256 becomes zero; 257 becomes 1 and so on.
+    To customize wrapping use WRAPPING LIBRARY.    
+    ")
 }
