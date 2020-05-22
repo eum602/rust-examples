@@ -5,7 +5,9 @@ fn main() {
     data_types();
     data_types_scalars_integers();
     data_types_floating_point();
-    operations()
+    operations();
+    boolexample();
+    characterexample()
 }
 
 fn constants_variables(){
@@ -97,4 +99,24 @@ fn operations() {
     let remainder = 43 % 5;
     ")
 
+}
+
+fn boolexample()  {
+    println!("
+    Bools:
+    let t: bool = false;
+    ")    
+}
+fn characterexample() {
+    println!("**Chars**
+    Chars are four bytes in size.
+    Unicode scalar value ==> Any kind like japanese, korean, etc.
+    ");
+
+   let c = 'z';
+   let z = 'Ƶ';
+   let hearth = '❤';
+   println!("{}",c);
+   println!("{}",z);
+   println!("{}",hearth)
 }
