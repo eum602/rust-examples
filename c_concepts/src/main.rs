@@ -7,7 +7,8 @@ fn main() {
     data_types_floating_point();
     operations();
     boolexample();
-    characterexample()
+    characterexample();
+    compound_types()
 }
 
 fn constants_variables(){
@@ -119,4 +120,18 @@ fn characterexample() {
    println!("{}",c);
    println!("{}",z);
    println!("{}",hearth)
+}
+
+fn compound_types() {
+    println!("
+    Groups multiple values into one type.
+    * Tuples:
+        * fixed declared once declared they cannot grow or shrink in size.
+        * a grouped of some values
+    ");
+    println!("let mytuple: (f32,u8,char) = (34.9,4,'❤')");
+
+    let mytuple: (f32,u8,char) = (34.9,4,'❤');
+    let (a,b,c) = mytuple;
+    println!("Printing values individually: {} {} {}",a,b,c)
 }
