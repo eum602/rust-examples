@@ -3,7 +3,9 @@ fn main() {
     constants_variables();
     shadowing();
     data_types();
-    data_types_scalars_integers()
+    data_types_scalars_integers();
+    data_types_floating_point();
+    operations()
 }
 
 fn constants_variables(){
@@ -65,4 +67,34 @@ fn data_types_scalars_integers () {
     In --release the Two's complement wrapping occurs. so 256 becomes zero; 257 becomes 1 and so on.
     To customize wrapping use WRAPPING LIBRARY.    
     ")
+}
+
+fn data_types_floating_point() {
+    println!("
+    floating point data types are:
+    * 32bits ==> let l: f32 = 5.0 ==> l is f32 
+    *64 bits ==> default ==> let k = 35.0 ==> by default k is f64
+    ")    
+}
+
+fn operations() {
+    println!("
+    
+    // addition
+    let sum = 5 + 10;
+    
+
+    // subtraction
+    let difference = 95.5 - 4.3;
+
+    // multiplication
+    let product = 4 * 30;
+
+    // division
+    let quotient = 56.7 / 32.2;
+
+    // remainder
+    let remainder = 43 % 5;
+    ")
+
 }
